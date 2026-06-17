@@ -1,0 +1,377 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*farbe  */
+:root {
+  --lila: #7b2cbf;
+  --lila-hell: #c77dff;
+  --schwarz: #0b0b0f;
+  --grau: #1a1a1f;
+  --weiß: #f5f5f5;
+}
+
+/*BODY*/
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--schwarz), var(--grau));
+  color: var(--weiß);
+  min-height: 100vh;
+}
+
+/* HEADER  */
+.header {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.header h1 {
+  font-size: 3rem;
+  color: var(--lila-hell);
+}
+
+.header p {
+  opacity: 0.8;
+}
+
+/* NAV (Flexbox) */
+.nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding-bottom: 2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--weiß);
+  font-weight: 500;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--lila);
+  transition: width 0.3s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/*  GRID LAYOUT */
+.layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/*  CARDS  */
+.card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 40px rgba(123, 44, 191, 0.3);
+}
+
+/*  FOTO-PLATZHALTER  */
+.photo {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  border: 2px dashed var(--lila);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lila-hell);
+  margin-bottom: 1.5rem;
+}
+
+
+
+/*  SKILLS  */
+.skills {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.skills a {
+  text-decoration: none;
+  color: var(--weiß);
+}
+
+.skills li {
+  padding: 0.6rem;
+  border-radius: 8px;
+  background: rgba(123, 44, 191, 0.15);
+  transition: background 0.3s;
+}
+
+.skills li:hover {
+  background: rgba(123, 44, 191, 0.35);
+}
+
+/*  DETAILS  */
+details {
+  margin-top: 1rem;
+}
+
+summary {
+  cursor: pointer;
+  color: var(--lila-hell);
+  font-weight: 600;
+}
+
+/*  FOOTER  */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
+/*  FOTO AUF SPORT-SEITE  */
+.sport-photo {
+  height: 300px;
+  background-color: #0b0b0f; /* schwarzer Hintergrund */
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.sport-photo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* GANZES BILD SICHTBAR */
+  border-radius: 12px;
+}
+
+/*  LINK-HINWEIS (Sportlich)  */
+.link-hinweis a {
+  color: var(--lila-hell);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link-hinweis a::after {
+  content: " (klicken)";
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.link-hinweis a:hover {
+  text-decoration: underline;
+}
+/*  RESPONSIVE DESIGN (HANDY)  */
+@media (max-width: 768px) {
+
+  /* alles untereinander auf handy */
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  /* Navigation untereinander, gut klickbar */
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav a {
+    font-size: 1.1rem;
+  }
+
+  /* Überschrift kleiner */
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  /* Karten weniger Padding */
+  .card {
+    padding: 1.5rem;
+  }
+
+  /* Sportfoto kleiner */
+  .sport-photo {
+    height: 220px;
+  }
+}
+/*  INDEX: BOXEN UNTEREINANDER  */
+body:has(#about) .layout {
+  grid-template-columns: 1fr;
+}
+/*  EINSPALTIGES LAYOUT  */
+.layout-single {
+  grid-template-columns: 1fr;
+}
+/*  INDEX: ÜBER MICH GRÖSSERE SCHRIFT  */
+#about h2 {
+  font-size: 2rem;
+}
+/*  INDEX: ÜBER-MICH TEXT GRÖSSER  */
+#about p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+/* SPORT-SEITE: TEXT GRÖSSER */
+.sport-page .card p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+}
+/* EIGENSCHAFTEN-SEITE: TEXT GRÖSSER */
+.eigenschaften-page .card p,
+.eigenschaften-page .card a {
+  font-size: 1.15rem;
+  line-height: 1.9;
+}
+/* MEHR-SEITE: TEXT GRÖSSER */
+.mehr-page .card p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+}
+/* SPORT-VIDEO */
+.sport-photo video {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* ============================================= */
+/*  LERNTAGEBUCH-SEITE (neu)                      */
+/* ============================================= */
+
+/* kleines Badge (wird auch von #about im index.html genutzt) */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(123, 44, 191, 0.25);
+  color: var(--lila-hell);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.lerntagebuch-page .card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* jeder Tag bekommt eine Trennlinie, außer der erste */
+.lerntagebuch-page details {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.1rem;
+}
+
+.lerntagebuch-page details:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.lerntagebuch-page summary {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  font-size: 1.1rem;
+}
+
+.lerntagebuch-page .datum {
+  font-family: monospace;
+  color: var(--lila-hell);
+  opacity: 0.75;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.lerntagebuch-page ul.themen {
+  list-style: disc;
+  margin: 0.9rem 0 0.9rem 1.4rem;
+}
+
+.lerntagebuch-page ul.themen li {
+  margin-bottom: 0.45rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  background: none;
+  padding: 0;
+}
+
+.lerntagebuch-page .hu-note {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 0.6rem;
+}
+
+.lerntagebuch-page .hu-note .badge {
+  margin-right: 0.6rem;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem 1rem;
+}
+
+.controls button {
+  background: rgba(123, 44, 191, 0.2);
+  color: var(--weiß);
+  border: 1px solid var(--lila);
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.controls button:hover {
+  background: rgba(123, 44, 191, 0.4);
+}
+
+.controls button.aktiv {
+  background: var(--lila);
+  color: var(--weiß);
+}
+
+.lerntagebuch-page details.ausgeblendet {
+  display: none;
+}
+
+.lerntagebuch-page .hinweis {
+  color: var(--lila-hell);
+  opacity: 0.8;
+  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .controls {
+    padding: 0 1rem 1rem;
+  }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Lerntagebuch – Omar Mohamad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>Lerntagebuch</h1>
+  <p>WMC · was ich Stunde für Stunde gelernt habe</p>
+</header>
+
+<nav class="nav">
+  <ul>
+    <li><a href="index.html">Über mich</a></li>
+    <li><a href="eigenschaften.html">Eigenschaften</a></li>
+    <li><a href="mehr.html">Mehr</a></li>
+    <li><a href="lerntagebuch.html">Lerntagebuch</a></li>
+  </ul>
+</nav>
+
+<main class="layout layout-single lerntagebuch-page">
+
+  <section class="card">
+
+    <details open>
+      <summary><span class="datum">11.02.2026</span> Intro JavaScript</summary>
+      <ul class="themen">
+        <li>Datentypen</li>
+        <li>let, const</li>
+        <li>Functions, Arguments</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary><span class="datum">18.02.2026</span> Functions &amp; Strings</summary>
+      <ul class="themen">
+        <li>Wiederholung Functions, insbesondere das Arguments-Object</li>
+        <li>Template Strings</li>
+        <li>document.getElementById ...</li>
+      </ul>
+      <p class="hu-note"><span class="badge">HÜ</span>Kleinen Taschenrechner ausgehend vom Code dieser Stunde bauen</p>
+    </details>
+
+    <details>
+      <summary><span class="datum">25.02.2026</span> JavaScript in Action</summary>
+      <ul class="themen">
+        <li>Fehler in der Browser-Konsole finden</li>
+        <li>eval() und seine Problematik</li>
+        <li>document.getElementById / querySelector</li>
+        <li>Arrays, Funktionen, anonyme / Lambda-Funktionen</li>
+        <li>for (let i ...), Template Strings</li>
+        <li>for (const [index, value] of a.entries())</li>
+        <li>BigInt (1n)</li>
+        <li>a.sort((e1, e2) =&gt; ...) mit eigener Vergleichsfunktion</li>
+      </ul>
+      <p class="hu-note"><span class="badge">SÜ/HÜ</span>Array mit gemischten Datentypen sortieren: zuerst nach Typ, dann nach Wert</p>
+    </details>
+
+    <details>
+      <summary><span class="datum">04.03.2026</span> Array Methods</summary>
+      <ul class="themen">
+        <li>JSON importieren: import personen from "./persons.json" with &#123; type: "json" &#125;</li>
+        <li>map() – ein Array in ein anderes Array transformieren</li>
+        <li>filter() – ein Array nach einer Bedingung einschränken</li>
+        <li>slice(start, end) – ein Teilarray zurückgeben</li>
+        <li>reduce() – ein Array auf einen einzelnen Wert reduzieren</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary><span class="datum">11.03.2026</span> Array-Übungen &amp; JS-Runtimes</summary>
+      <ul class="themen">
+        <li>Array-Übungen vertieft</li>
+        <li>JS-Runtimes im Vergleich: Node.js (V8), Deno (V8), Bun</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary><span class="datum">18.03.2026</span> Code in den Browser bringen</summary>
+      <ul class="themen">
+        <li>Code als globale Variable im Browser ablegen</li>
+        <li>innerText vs. innerHTML</li>
+        <li>document.querySelector – alle bekannten CSS-Selektoren funktionieren hier</li>
+        <li>querySelectorAll gibt eine NodeList zurück → mit Array.from(...) bzw. [...] in ein Array umwandeln</li>
+        <li>onclick="funktion()"</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary><span class="datum">08.04.2026</span> defer, addEventListener &amp; Exceptions</summary>
+      <ul class="themen">
+        <li>&lt;script defer&gt; statt Script am Seitenende</li>
+        <li>doch kein onclick mehr – stattdessen addEventListener</li>
+        <li>Exceptions: try / catch</li>
+        <li>Wissensüberprüfung am Stundenende</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary><span class="datum">15.04.2026</span> Public APIs</summary>
+      <ul class="themen">
+        <li>GitHub-Liste "public-apis" durchsucht</li>
+        <li>Entscheidung, mit welcher API ein eigenes Projekt entstehen soll</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary><span class="datum">22.04.2026</span> DOM-Manipulation</summary>
+      <ul class="themen">
+        <li>document.querySelector / querySelectorAll</li>
+        <li>innerText vs. innerHTML</li>
+        <li>document.createElement</li>
+        <li>element.appendChild</li>
+        <li>element.remove() / removeChild()</li>
+        <li>element.classList.add / remove / toggle</li>
+        <li>addEventListener mit Callback-Funktionen</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary><span class="datum">29.04.2026</span> TypeScript &amp; Deno-Transpile</summary>
+      <ul class="themen">
+        <li>TypeScript-Primer</li>
+        <li>Promises, async/await wiederholt</li>
+        <li>Transpile-Deno-Projekt hochgeladen</li>
+      </ul>
+      <p class="hu-note"><span class="badge">HÜ</span>Transpile-Projekt so lange aufräumen, bis Deno keine TypeScript-Fehler mehr meldet</p>
+    </details>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p><a href="index.html">← Zurück zur Startseite</a></p>
+</footer>
+
+</body>
+</html>
